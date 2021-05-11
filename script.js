@@ -220,6 +220,104 @@ function WinnerChecker() {
 			topRow.forEach((cell) => (cell.style.backgroundColor = truthsy));
 			clearInterval(intervalSetter);
 			currentClicker = "";
+		} else if (
+			topRow[0].innerHTML === bot.operator &&
+			topRow[1].innerHTML === bot.operator &&
+			topRow[2].innerHTML === bot.operator
+		) {
+			alert("You lost!");
+			topRow.forEach((cell) => (cell.style.backgroundColor = falsy));
+			clearInterval(intervalSetter);
+			currentClicker = "";
+		} else if (
+			middleRow[0].innerHTML === user.operator &&
+			middleRow[1].innerHTML === user.operator &&
+			middleRow[2].innerHTML === user.operator
+		) {
+			alert("You won!");
+			middleRow.forEach((cell) => (cell.style.backgroundColor = truthsy));
+			clearInterval(intervalSetter);
+			currentClicker = "";
+		} else if (
+			middleRow[0].innerHTML === bot.operator &&
+			middleRow[1].innerHTML === bot.operator &&
+			middleRow[2].innerHTML === bot.operator
+		) {
+			alert("You lost!");
+			middleRow.forEach((cell) => (cell.style.backgroundColor = falsy));
+			clearInterval(intervalSetter);
+			currentClicker = "";
+		} else if (
+			bottomRow[0].innerHTML === user.operator &&
+			bottomRow[1].innerHTML === user.operator &&
+			bottomRow[2].innerHTML === user.operator
+		) {
+			alert("You won!");
+			bottomRow.forEach((cell) => (cell.style.backgroundColor = truthsy));
+			clearInterval(intervalSetter);
+			currentClicker = "";
+		} else if (
+			bottomRow[0].innerHTML === bot.operator &&
+			bottomRow[1].innerHTML === bot.operator &&
+			bottomRow[2].innerHTML === bot.operator
+		) {
+			alert("You lost!");
+			middleRow.forEach((cell) => (cell.style.backgroundColor = falsy));
+			clearInterval(intervalSetter);
+			currentClicker = "";
+		} else if (
+			leftDiagnol[0].innerHTML === user.operator &&
+			leftDiagnol[1].innerHTML === user.operator &&
+			leftDiagnol[2].innerHTML === user.operator
+		) {
+			alert("You won!");
+			leftDiagnol.forEach((cell) => (cell.style.backgroundColor = truthsy));
+			clearInterval(intervalSetter);
+			currentClicker = "";
+		} else if (
+			leftDiagnol[0].innerHTML === bot.operator &&
+			leftDiagnol[1].innerHTML === bot.operator &&
+			leftDiagnol[2].innerHTML === bot.operator
+		) {
+			alert("You lost!");
+			leftDiagnol.forEach((cell) => (cell.style.backgroundColor = falsy));
+			clearInterval(intervalSetter);
+			currentClicker = "";
+		} else if (
+			rightDiagnol[0].innerHTML === user.operator &&
+			rightDiagnol[1].innerHTML === user.operator &&
+			rightDiagnol[2].innerHTML === user.operator
+		) {
+			alert("You won!");
+			rightDiagnol.forEach((cell) => (cell.style.backgroundColor = truthsy));
+			clearInterval(intervalSetter);
+			currentClicker = "";
+		} else if (
+			rightDiagnol[0].innerHTML === bot.operator &&
+			rightDiagnol[1].innerHTML === bot.operator &&
+			rightDiagnol[2].innerHTML === bot.operator
+		) {
+			alert("You lost!");
+			rightDiagnol.forEach((cell) => (cell.style.backgroundColor = falsy));
+			clearInterval(intervalSetter);
+			currentClicker = "";
+		} else {
+			let str = "";
+			buttons.forEach((button) => {
+				if (button.innerHTML !== "") {
+					str += true;
+				} else {
+					str += false;
+				}
+			});
+			if (!str.includes("false")) {
+				clearInterval(intervalSetter);
+				alert("Tie!");
+				currentClicker = "";
+				buttons.forEach((button) => (button.style.backgroundColor = "yellow"));
+			} else {
+				return;
+			}
 		}
 	});
 }
